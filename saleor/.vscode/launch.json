@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "Remote Django App",
+            "type": "python",
+            "request": "attach",
+            "pathMappings": [
+                {
+                    "localRoot": "${workspaceFolder}",
+                    "remoteRoot": "/code"
+                },
+                {
+                    "localRoot": "/Users/ace/Library/Caches/pypoetry/virtualenvs/saleor-YAiBxMNT-py3.8/lib/python3.8/site-packages",
+                    "remoteRoot": "/usr/local/lib/python3.8/site-packages"
+                }
+            ],
+            "port": 4000,
+            "host": "localhost",
+            "justMyCode": false
+        }
+    ]
+}
