@@ -15,7 +15,6 @@ git clone https://github.com/mirumee/saleor-platform
 cd saleor-platform-dev
 cp -r saleor/* $SALEOR_PLATFORM_PATH/saleor/
 cp -r saleor-platform/* $SALEOR_PLATFORM_PATH/
-docker-compose -f "docker-compose-dev.yml" up -d --build
 ```
 
 ## Kick start `saleor-platform`
@@ -23,6 +22,22 @@ docker-compose -f "docker-compose-dev.yml" up -d --build
 ```shell
 cd $SALEOR_PLATFORM_PATH
 docker-compose -f "docker-compose-dev.yml" up -d --build
+```
+
+## Init demo data
+
+```shell
+# refer to https://docs.saleor.io/docs/developer/installation
+
+# login your `saleor` docker container
+docker exec -it $SALEOR_CONTAINER_ID bash
+python manage.py migrate
+python manage.py collectstatic --noinput
+python manage.py populatedb
+
+# create your own admin
+python manage.py createsuperuser
+
 ```
 
 ## Using `saleor-platform`
